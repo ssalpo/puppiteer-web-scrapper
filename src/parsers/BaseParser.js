@@ -16,7 +16,8 @@ export default class BaseParser {
         return this;
     }
 
-    addUniqueId(item) {
-        return {...item, uniqId: md5([item.author, item.date, item.rating].join(''))}
+    addUniqueId(item, uniqValues, substr) {
+        let hash = md5(uniqValues)
+        return {...item, uniqId: substr ? hash.substring(0, 8): hash}
     }
 }

@@ -23,7 +23,7 @@ export default class TwoGis extends BaseParser {
 
         await pageScreenshot(this.page);
 
-        let reviews = (await this.getReviews()).map(e => this.addUniqueId(e));
+        let reviews = (await this.getReviews()).map(e => this.addUniqueId(e, [e.author, e.date, e.rating].join()));
 
         if (reviews.length && branchPlatformId) {
             await (new ApiService).importReviews(

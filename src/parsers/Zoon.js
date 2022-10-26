@@ -13,7 +13,7 @@ export default class Zoon extends BaseParser {
 
         let reviews = (await this.getReviews()).map(e => {
             return {
-                ...this.addUniqueId(e),
+                ...this.addUniqueId(e, [e.author, e.date].join()),
                 date: format(parseISO(e.date), 'yyyy-MM-dd')
             }
         });

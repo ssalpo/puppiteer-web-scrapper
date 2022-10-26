@@ -27,7 +27,7 @@ export default class Yandex extends BaseParser {
 
         let reviews = (await this.getReviews()).map(e => {
             return {
-                ...this.addUniqueId(e),
+                ...this.addUniqueId(e, [e.author, e.date, e.rating].join()),
                 date: format(parseISO(e.date), 'yyyy-MM-dd')
             }
         });

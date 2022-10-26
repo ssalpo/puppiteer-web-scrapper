@@ -28,7 +28,7 @@ export default class Otzovik extends BaseParser {
 
         reviews = reviews.map(e => {
             return {
-                ...this.addUniqueId(e),
+                ...this.addUniqueId(e, [e.author, e.date].join()),
                 date: format(parse(e.date, 'dd.MM.yyyy', new Date()), 'yyyy.MM.dd')
             }
         });

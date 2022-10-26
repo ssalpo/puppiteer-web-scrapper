@@ -10,7 +10,7 @@ export default class Prodoctorov extends BaseParser {
             await this.clickToShowMore();
         }
 
-        let reviews = (await this.getReviews()).map(e => this.addUniqueId(e));
+        let reviews = (await this.getReviews()).map(e => this.addUniqueId(e, [e.author, e.date].join(), true));
 
         if (reviews.length && branchPlatformId) {
             await (new ApiService).importReviews(
