@@ -15,6 +15,7 @@
     "puppeteer-cluster": "^0.23.0",
     "puppeteer-extra": "^3.3.4",
     "puppeteer-extra-plugin-anonymize-ua": "^2.4.4",
-    "puppeteer-extra-plugin-stealth": "^2.11.1"
+    "puppeteer-extra-plugin-stealth": "^2.11.1",
+    "puppeteer-page-proxy": "^1.2.9"
   }
 }
